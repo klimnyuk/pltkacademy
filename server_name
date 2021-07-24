@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep 'nginx-01.com' ~/server -P -R -I -l | xargs sed -i 's/nginx-01.com/nginx-02.com/g' #script will correct all nginx-01.com to nginx-02.com in /home/$username/server directory
