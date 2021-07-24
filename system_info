@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#collecting in file /home/$username/system.txt system information
+
+HOSTNAME=$(hostname)
+NPROC=$(nproc)
+VMSTAT=$(vmstat -s | grep 'total memory')
+DISKSIZE=$(df / --output=size -h)
+
+
+echo "Hostname:" $HOSTNAME > system.txt
+echo "Number of cores:" $NPROC >> system.txt
+echo "RAM:" $VMSTAT >> system.txt
+echo "Disk:" $DISKSIZE | grep 'G' >> system.txt
