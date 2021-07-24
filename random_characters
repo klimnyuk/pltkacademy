@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for (( i=1; i <= 10; i++ ))
+do
+head /dev/urandom -c 10000 | tr -dc A-Za-z0-9 | head -c 1000 > ~/random/random_text_$i.txt #creating 10 files in /home/$userame/random directory. each file contains 1000 random symbols
+done
